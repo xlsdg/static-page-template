@@ -73,7 +73,7 @@ gulp.task('build-css', ['clean-css'], function() {
         .pipe(less())
         .pipe(autoprefixer({
             browsers: [
-                'ie >= 9',
+                'ie >= 8',
                 'ff >= 10',
                 'chrome >= 20',
                 'safari >= 7',
@@ -177,7 +177,7 @@ gulp.task('server', function() {
             target: '127.0.0.1:8899'
         }
     });
-    
+
     gulp.watch(srcCss + '/**/*.less', ['build-css']);
     gulp.watch(srcJs + '/**/*.js', ['build-js']);
     gulp.watch(srcHtml + '/**/*.html').on('change', browsersync.reload);
